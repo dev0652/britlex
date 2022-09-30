@@ -1,0 +1,46 @@
+/* Reset */
+
+:root {
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* For markup ul's: */
+
+.list-none {
+	list-style: none;
+}
+
+/* Global values */
+
+:root {
+	font-family: "Poppins", sans-serif;
+	--accent-light: #8f95a5;
+	--accent-dark: #263238;
+	--bg: #e5e5e5;
+	--bg-gray: #f5f5f5;
+}
+
+body {
+	width: 1600px;
+	color: var(--accent-dark);
+	background-color: #fff;
+	font-size: 14px;
+	letter-spacing: 0.03em;
+}
+
+h1,
+h2 {
+	color: #000;
+}
+
+/* .page {
+	display: flex;
+	flex-direction: column;
+} */
