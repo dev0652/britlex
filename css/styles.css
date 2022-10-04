@@ -203,6 +203,7 @@ h2,
 	font-weight: 600;
 	font-size: 64px;
 	line-height: calc(80/64);
+	margin-bottom: 40px;
 }
 
 .section h2 {
