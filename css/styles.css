@@ -99,7 +99,6 @@ h2,
 
 .header-nav {
 	gap: 50px;
-	/* margin-left: 236px; */
 }
 
 .section {
@@ -128,7 +127,6 @@ h2,
 
 .policies {
 	gap: 80px;
-	/* margin-left: 236px; */
 }
 
 /* Links */
@@ -147,8 +145,7 @@ h2,
 
 .logo {
 	font-size: 36px;
-	/* Line height has been intentionally adjusted and set in pixels for proper positioning of the logo within  header! */
-	line-height: 20px;
+	line-height: calc(54/36);
 }
 
 .logo span {
