@@ -30,6 +30,7 @@
 
 	--accent-light: #8F95A5;
 	--accent-dark: #263238;
+	--count-gray: #2A3246;
 	--bg: #E5E5E5;
 	--bg-gray: #F5F5F5;
 	--footer-border: #C4C4C4;
@@ -53,7 +54,6 @@ h2,
 	color: #000;
 }
 
-.hero p,
 .section p,
 .policies {
 	color: var(--accent-light);
@@ -64,24 +64,36 @@ h2,
 .page,
 .header,
 .header-nav,
-.hero,
 .section,
+.price-cards,
+.price-labels,
 .group-41,
 .footer,
 .policies {
 	display: flex;
 }
 
-.page {
+.page,
+.skills,
+.pricing {
 	flex-direction: column;
-	gap: 180px;
+}
+
+.header,
+.footer,
+.skills,
+.pricing {
+	align-items: center;
 }
 
 .header,
 .footer {
 	justify-content: space-between;
-	align-items: center;
 	margin: 55px 0;
+}
+
+.page {
+	gap: 180px;
 }
 
 .header-nav {
@@ -89,20 +101,33 @@ h2,
 	/* margin-left: 236px; */
 }
 
-.policies {
-	gap: 80px;
-	/* margin-left: 236px; */
+.section {
+	gap: 144px;
 }
 
-#skills {
-	flex-direction: column;
-	align-items: center;
+.skills,
+.pricing {
+	gap: 0;
 }
 
-#contacts {
+.group-41 {
+	gap: 131px;
+}
+
+.price-cards,
+.price-labels {
+	gap: 30px;
+}
+
+.contacts {
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	gap: 100px;
+}
+
+.policies {
+	gap: 80px;
+	/* margin-left: 236px; */
 }
 
 /* Links */
@@ -147,10 +172,10 @@ h2,
 	color: #fff;
 }
 
-.unfilled,
-.subscribe {
-	min-width: 312px;
-	padding: 20px 56px;
+.skill .filled {
+	min-width: 218px;
+	padding: 15px 51px;
+	letter-spacing: auto;
 }
 
 .unfilled {
@@ -158,40 +183,20 @@ h2,
 	border: 2px solid var(--accent-dark);
 }
 
-
-
-.skill .filled {
-	min-width: 218px;
-	padding: 15px 51px;
-	letter-spacing: auto;
+.unfilled,
+.subscribe {
+	min-width: 312px;
+	padding: 20px 56px;
 }
 
-.get-started {
+.hero .filled {
 	min-width: 426px;
 	padding: 23px 64px;
 	font-size: 36px;
 	line-height: calc(54/36);
 }
 
-/* Hero */
 
-.section,
-.hero {
-	justify-content: space-between;
-	justify-content: stretch;
-	gap: 144px;
-}
-
-.hero h1 {
-	font-size: 64px;
-	font-weight: 600;
-	line-height: calc(80/64);
-}
-
-.hero p {
-	font-size: 24px;
-	margin: 40px 0 60px;
-}
 
 /* Sections */
 
@@ -204,9 +209,20 @@ h2,
 .section h3 {
 	font-weight: 600;
 	font-size: 30px;
-	line-height: calc(45/30);
 	color: var(--accent-dark);
 	margin-bottom: 20px;
+}
+
+.skills h3 {
+	line-height: calc(45/30);
+}
+
+.pricing h3 {
+	line-height: calc(48/30);
+}
+
+.section p {
+	margin-bottom: 30px;
 }
 
 /* Skills */
@@ -220,14 +236,15 @@ h2,
 .skill p {
 	font-size: 16px;
 	line-height: calc(24/16);
-	margin-bottom: 30px;
 }
+
 
 /* I thank Sarah Edo for her awesome grid-generation tool https: //cssgrid-generator.netlify.app */
 
 .grid-container {
 	display: grid;
 	height: 980px;
+	margin-top: 0;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	grid-column-gap: 30px;
@@ -261,19 +278,82 @@ h2,
 	width: 330px;
 }
 
+/* About Us */
+
+.about p {
+	font-size: 20px;
+	line-height: calc(36/20);
+}
+
+.group-41 {
+	justify-content: space-around;
+	justify-content: center;
+	text-align: center;
+}
+
+.group-41 p {
+	line-height: calc(30/20);
+}
+
+.group-41 p.count {
+	color: var(--count-gray);
+	font-weight: 600;
+	font-size: 48px;
+	line-height: calc(72/48);
+	margin-bottom: 0;
+}
+
 /* Pricing */
 
-#pricing {
-	display: block;
+.price-label {
+	background-color: #EEEEEE;
+	border-radius: 5px;
+	padding: 5px 10px 0;
+	width: 260px;
+	height: 45px;
+	display: inline-flex;
+	justify-content: center;
+	justify-content: space-around;
+	align-items: baseline;
+}
+
+p.price {
+	color: var(--accent-dark);
+	font-size: 24px;
+}
+
+p.period {
+	color: #546269;
+	font-size: 18px;
+}
+
+.price-labels li {
+	width: 426px;
 }
 
 /* Contact Us */
 
-#contacts .content {
+.contacts .content {
 	widows: 767px;
 }
 
-/* FOOTER */
+input {
+	width: 425px;
+	height: 70px;
+	border: 1px solid var(--accent-light);
+	border-radius: 10px;
+	padding: 20px 30px;
+	margin-right: 30px;
+}
+
+.enter-email {
+	color: var(--accent-light);
+	font-family: inherit;
+	font-size: 16px;
+	line-height: calc(30/16);
+}
+
+/* Footer */
 
 .footer {
 	border-top: 1px solid var(--footer-border);

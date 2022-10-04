@@ -28,7 +28,7 @@
 					<a class="link" href="#skills">Skills</a>
 				</li>
 				<li>
-					<a class="link" href="#about-us">About us</a>
+					<a class="link" href="#about">About us</a>
 				</li>
 				<li>
 					<a class="link" href="#pricing">Pricing</a>
@@ -47,7 +47,7 @@
 	<main class="page">
 
 		<!-- Hero -->
-		<section class="hero">
+		<section class="section hero">
 
 			<div class="content">
 				<h1>
@@ -60,7 +60,7 @@
 					each student, you will be able to make your
 					first sketch after the first lesson.
 				</p>
-				<button class="button filled get-started">Get started</button>
+				<button class="button filled">Get started</button>
 			</div>
 
 			<img src="./svg/learning-languages.svg" width="654"
@@ -70,7 +70,7 @@
 
 		<!-- Skills -->
 
-		<section class="section" id="skills">
+		<section class="section skills" id="skills">
 
 			<h2>Skills</h2>
 
@@ -146,9 +146,10 @@
 
 		<!-- About Us -->
 
-		<section class="section" id="about-us">
+		<section class="section about" id="about">
 
 			<div class="content">
+
 				<h2>About Us</h2>
 				<p>
 					The model offers a framework for discussing problems related to the
@@ -157,18 +158,20 @@
 					future software product is described quite abstractly from the point
 					of view of the expectations of both users and the customer.
 				</p>
+
 				<ul class="list-none group-41">
 					<li>
+
+						<p class="count">800</p>
 						<p>Pupils</p>
-						<p>800</p>
 					</li>
 					<li>
+						<p class="count">18</p>
 						<p>Teachers</p>
-						<p>18</p>
 					</li>
 					<li>
-						<p>Foreign languages</p>
-						<p>6</p>
+						<p class="count">6</p>
+						<p>Foreign <br>languages</p>
 					</li>
 				</ul>
 			</div>
@@ -179,10 +182,11 @@
 
 		<!-- Pricing -->
 
-		<section class="section" id="pricing">
+		<section class="section pricing" id="pricing">
 
 			<h2>Pricing</h2>
-			<ul class="list-none">
+
+			<ul class="list-none price-cards">
 				<li>
 					<img src="./svg/online.svg" width="426" alt="A woman is passing an online-test on her laptop" />
 					<h3>Self-study online course</h3>
@@ -190,8 +194,6 @@
 						Start learning English online in live classes with qualified EC
 						teachers and students from all over the world.
 					</p>
-					<p>£5.99</p>
-					<p>per month</p>
 				</li>
 				<li>
 					<img src="./svg/lesson.svg" width="426" alt="A man is teaching an adult student in class" />
@@ -199,8 +201,6 @@
 					<p>
 						Interactive group classes with expert teachers. Free 7-day trial
 					</p>
-					<p>£12.99</p>
-					<p>per month</p>
 				</li>
 				<li>
 					<img src="./svg/webinar.svg" width="426" alt="A woman is sitting at a table watching a webinar" />
@@ -209,15 +209,47 @@
 						Online one-to-one English tutoring – enjoy our first session for
 						only $1
 					</p>
-					<p>£12.99</p>
-					<p>per month</p>
 				</li>
 			</ul>
+
+			<ul class="list-none price-labels">
+				<li>
+					<div class="price-label">
+						<p class="price">
+							£5.99
+						</p>
+						<p class="period">
+							per month
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="price-label">
+						<p class="price">
+							£12.99
+						</p>
+						<p class="period">
+							per month
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="price-label">
+						<p class="price">
+							£12.99
+						</p>
+						<p class="period">
+							per month
+						</p>
+					</div>
+				</li>
+			</ul>
+
 		</section>
 
 		<!-- Contact Us -->
 
-		<section class="section" id="contacts">
+		<section class="section contacts" id="contacts">
 
 			<div class="content">
 				<h2>Contact us</h2>
@@ -227,7 +259,7 @@
 				</p>
 
 				<form action="">
-					<input type="text" placeholder="Enter Your E-mail" />
+					<input class="enter-email" type="text" placeholder="Enter Your E-mail" />
 
 					<button class="button filled subscribe" type="submit">Subscribe</button>
 				</form>
