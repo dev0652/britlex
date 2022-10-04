@@ -11,6 +11,12 @@
 	padding: 0;
 }
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 /* For markup ul's: */
 
 .list-none {
@@ -167,16 +173,6 @@ h2,
 	justify-content: space-between;
 	justify-content: stretch;
 	gap: 144px;
-}
-
-.hero .content {
-	/* width: 540px; */
-	width: 100%;
-	border: 1px solid red;
-}
-
-.img {
-	border: 1px solid green;
 }
 
 .hero h1 {
