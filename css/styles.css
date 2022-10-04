@@ -58,8 +58,9 @@ h2,
 .landing,
 .header,
 .header-nav,
-.header-flex,
+.hero,
 .section,
+.group-41,
 .footer,
 .policies {
 	display: flex;
@@ -111,7 +112,6 @@ h2,
 	font-size: 36px;
 	/* Line height has been intentionally adjusted and set in pixels for proper positioning of the logo within  header! */
 	line-height: 20px;
-
 }
 
 .logo span {
@@ -162,14 +162,21 @@ h2,
 
 /* Hero */
 
+.section,
 .hero {
-	display: flex;
 	justify-content: space-between;
+	justify-content: stretch;
 	gap: 144px;
 }
 
 .hero .content {
-	width: 540px;
+	/* width: 540px; */
+	width: 100%;
+	border: 1px solid red;
+}
+
+.img {
+	border: 1px solid green;
 }
 
 .hero h1 {
@@ -188,10 +195,15 @@ h2,
 /* Headings inside sections */
 
 .section h2 {
-	font-size: 36px;
-	font-weight: 700;
-	margin-bottom: 50px;
-	margin-left: 0;
+	font-size: 48px;
+	font-weight: 600;
+	margin-bottom: 60px;
+}
+
+/* Pricing */
+
+.pricing {
+	display: block;
 }
 
 /* Contact Us */
