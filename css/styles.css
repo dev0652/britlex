@@ -94,7 +94,7 @@ h2,
 	gap: 180px;
 }
 
-.contact-us {
+#contacts {
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	gap: 100px;
@@ -198,13 +198,13 @@ h2,
 
 /* Pricing */
 
-.pricing {
+#pricing {
 	display: block;
 }
 
 /* Contact Us */
 
-.contact-us .content {
+#contacts .content {
 	widows: 767px;
 }
 
