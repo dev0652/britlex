@@ -333,11 +333,11 @@ p.period {
 
 /* Contact Us */
 
-.contacts .content {
-	widows: 767px;
+.contacts p {
+	width: 650px;
 }
 
-input {
+.enter-email {
 	width: 425px;
 	height: 70px;
 	border: 1px solid var(--accent-light);
@@ -346,9 +346,9 @@ input {
 	margin-right: 30px;
 }
 
-.enter-email {
+.enter-email::placeholder {
 	color: var(--accent-light);
-	font-family: inherit;
+	font-family: "Poppins";
 	font-size: 16px;
 	line-height: calc(30/16);
 }
