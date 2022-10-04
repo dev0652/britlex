@@ -199,6 +199,12 @@ h2,
 
 /* Sections */
 
+.hero h1 {
+	font-weight: 600;
+	font-size: 64px;
+	line-height: calc(80/64);
+}
+
 .section h2 {
 	font-size: 48px;
 	font-weight: 600;
