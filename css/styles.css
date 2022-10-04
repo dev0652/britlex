@@ -28,11 +28,11 @@
 :root {
 	font-family: "Poppins", sans-serif;
 
+	/* Color variables	 */
 	--accent-light: #8F95A5;
 	--accent-dark: #263238;
 	--count-gray: #2A3246;
-	--bg: #E5E5E5;
-	--bg-gray: #F5F5F5;
+	--skill-bg: #F5F5F5;
 	--footer-border: #C4C4C4;
 	--logo-alt: #939393;
 }
@@ -231,10 +231,15 @@ h2,
 	margin-bottom: 30px;
 }
 
+.hero p {
+	font-size: 24px;
+	line-height: calc(36/24);
+}
+
 /* Skills */
 
 .skill {
-	background-color: var(--bg-gray);
+	background-color: var(--skill-bg);
 	border-radius: 10px;
 	padding: 32px 18px;
 }
