@@ -21,26 +21,192 @@
 
 :root {
 	font-family: "Poppins", sans-serif;
-	--accent-light: #8f95a5;
+
+	--accent-light: #8F95A5;
 	--accent-dark: #263238;
 	--bg: #e5e5e5;
 	--bg-gray: #f5f5f5;
+	--footer-border: #C4C4C4;
+	--logo-alt: #939393;
 }
 
 body {
 	width: 1600px;
+	padding: 0 131px;
 	color: var(--accent-dark);
 	background-color: #fff;
-	font-size: 14px;
-	letter-spacing: 0.03em;
+	font-size: 20px;
 }
 
+/* Color reset */
+
 h1,
-h2 {
+h2,
+.logo,
+.lets-talk {
 	color: #000;
 }
 
-/* .page {
+.hero p,
+.section p,
+.policies {
+	color: var(--accent-light);
+}
+
+/* Flex */
+
+.landing,
+.header,
+.header-nav,
+.header-flex,
+.section,
+.footer,
+.policies {
 	display: flex;
+}
+
+.header,
+.footer {
+	justify-content: space-between;
+	align-items: center;
+	margin: 55px 0;
+}
+
+.header-nav {
+	gap: 50px;
+	/* margin-left: 236px; */
+}
+
+.policies {
+	gap: 80px;
+	/* margin-left: 236px; */
+}
+
+.landing {
 	flex-direction: column;
-} */
+	gap: 180px;
+}
+
+.contact-us {
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	gap: 100px;
+}
+
+/* Links */
+
+.link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.header-nav .link {
+	font-weight: 500;
+	line-height: calc(30/20);
+}
+
+/* Links - Logo */
+
+.logo {
+	font-size: 36px;
+	/* Line height has been intentionally adjusted and set in pixels for proper positioning of the logo within  header! */
+	line-height: 20px;
+
+}
+
+.logo span {
+	color: var(--logo-alt);
+}
+
+/* Buttons */
+
+.button {
+	/* display: inline-block; */
+	border: none;
+	border-radius: 10px;
+	font-family: inherit;
+	font-size: inherit;
+	text-align: center;
+	cursor: pointer;
+	letter-spacing: 0.03em;
+}
+
+.lets-talk,
+.subscribe {
+	min-width: 312px;
+	padding: 20px 56px;
+}
+
+.lets-talk {
+	background-color: inherit;
+	border: 2px solid var(--accent-dark);
+}
+
+.dark {
+	background-color: var(--accent-dark);
+	color: #fff;
+}
+
+.skill .dark {
+	min-width: 426px;
+	padding: 15px 51px;
+	letter-spacing: auto;
+}
+
+.get-started {
+	min-width: 426px;
+	padding: 23px 64px;
+	font-size: 36px;
+	line-height: calc(54/36);
+}
+
+/* Hero */
+
+.hero {
+	display: flex;
+	justify-content: space-between;
+	gap: 144px;
+}
+
+.hero .content {
+	width: 540px;
+}
+
+.hero h1 {
+	font-size: 64px;
+	font-weight: 600;
+	line-height: calc(80/64);
+}
+
+.hero p {
+	font-size: 24px;
+	margin: 40px 0 60px;
+}
+
+/* Sections */
+
+/* Headings inside sections */
+
+.section h2 {
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 50px;
+	margin-left: 0;
+}
+
+/* Contact Us */
+
+.contact-us .content {
+	widows: 767px;
+}
+
+/* FOOTER */
+
+.footer {
+	border-top: 1px solid var(--footer-border);
+	height: 100px;
+}
+
+.policies {
+	font-size: 24px;
+}
