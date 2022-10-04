@@ -43,6 +43,7 @@ body {
 	color: var(--accent-dark);
 	background-color: #fff;
 	font-size: 20px;
+	margin: auto;
 }
 
 /* Color reset */
@@ -195,8 +196,6 @@ h2,
 	font-size: 36px;
 	line-height: calc(54/36);
 }
-
-
 
 /* Sections */
 
