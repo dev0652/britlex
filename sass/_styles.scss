@@ -186,18 +186,16 @@ section.about {
 			column-gap: 144px;
 		}
 	}
+
+	.description {
+		@include fz-lh(20, 36);
+	}
 }
 
-.about p {
-	font-size: 20px;
-	line-height: calc(36 / 20);
-}
-
-.group-41 {
+.stats {
+	// outline: auto;
 	display: flex;
-	justify-content: space-around;
 	justify-content: center;
-
 	gap: 131px;
 	text-align: center;
 
@@ -206,12 +204,19 @@ section.about {
 	}
 }
 
-.count {
-	color: $count-gray;
+.stat-count {
+	color: $stat-count-color;
 	font-weight: 600;
-	font-size: 48px;
-	line-height: calc(72 / 48);
+	@include fz-lh(48, 72);
+
 	margin-bottom: 0;
+}
+
+.stat-name {
+	color: $accent-light;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
 }
 
 /* -------------- Pricing -------------- */
@@ -221,6 +226,8 @@ section.pricing {
 		// gap: 0;
 		flex-direction: column;
 		// align-items: center;
+
+		@include fz-lh(20, 30);
 	}
 
 	.section-title {
@@ -243,22 +250,33 @@ section.pricing {
 // }
 
 .price-card {
+	// width: 426px;
 	@include flex-basis(3);
+
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.price-card-meta {
+	.description {
+		@include fz-lh(20, 30);
+		margin-bottom: 0;
+	}
 }
 
 .price-card-label {
-	width: 426px;
-	// @include flex-basis(3);
-
 	background-color: #eeeeee;
 	border-radius: 5px;
-	padding: 5px 10px 0;
+	padding: 5px 23px;
 	width: 260px;
-	height: 45px;
-	display: inline-flex;
+
+	display: flex;
 	justify-content: center;
 	justify-content: space-around;
 	align-items: baseline;
+
+	margin-top: auto;
 }
 
 .price {
@@ -283,6 +301,7 @@ section.contacts {
 
 	.description {
 		max-width: 650px;
+		@include fz-lh(20, 30);
 	}
 }
 
@@ -318,13 +337,16 @@ section.contacts {
 /* -------------- Footer -------------- */
 
 .footer {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	//
+	.container {
+		justify-content: space-between;
+		align-items: center;
+	}
 
 	border-top: 1px solid $footer-border;
 
-	margin: 36px 0;
+	margin: 63px 0;
+	padding: 22px 0;
 
 	@include media(desktop) {
 		margin: 55px 0;
@@ -335,6 +357,8 @@ section.contacts {
 	display: flex;
 	gap: $footer-items-spacing;
 
-	font-size: 24px;
+	@include fz-lh(24, 36);
+	// font-weight: 400;
+	letter-spacing: 0.02em;
 	color: $accent-light;
 }
