@@ -1,1148 +1,265 @@
-/* ---------- Header ---------- */
-
-.header {
-	@extend .dark;
-	// outline: auto;
-
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: $z-header;
-
-	width: 100vw;
-	// width: calc(100vw - 15px); //to adjust for  scrollbar width on Windows 10
-	padding: 40px 17px 20px 0;
-
-	.link {
-		color: $contrast;
-	}
-
-	.icon-logo {
-		fill: $darker;
-
-		@media screen and (max-width: ($tablet - 1px)) {
-			fill: $contrast;
-		}
-	}
-
-	&.no-transparency {
-		background-color: rgba(#111319, 0.8);
-		backdrop-filter: blur(3px);
-
-		& .icon-logo {
-			fill: $contrast;
-		}
-	}
+.page,
+.price-cards,
+.price-labels,
+.group-41 {
+	display: flex;
 }
 
-.header-container {
-	@extend .container;
-	display: flex;
+.page,
+.skills,
+.pricing {
+	flex-direction: column;
+}
+
+.header,
+.footer,
+.skills,
+.pricing {
 	align-items: center;
 }
 
-.header-logo {
-	@extend .link;
+.header {
+	justify-content: space-between;
 
-	@media screen and (min-width: $tablet) {
-		margin-right: $regular-gap;
-	}
-
-	@media screen and (min-width: $desktop) {
-		margin-right: 70px;
-	}
+	margin: 0 55px;
 }
 
-// Header menu wrapper
-
-.header-menu-wrapper {
-	// outline: auto;
-	//
-	.link {
-		@include fz-lh-rem(12, 16);
-		letter-spacing: 0.1em;
-	}
-
-	.button {
-		@include fz-lh-rem(12, 16);
-	}
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		//
-		position: fixed;
-		top: 100%; // якщо буде виводитись під футером
-		top: 0; // якщо буде виводитись поверх футера
-		left: 20vw;
-		width: 100%;
-		z-index: 2;
-
-		width: 80vw;
-		height: 100vh;
-		padding: 48px 40px;
-
-		@media screen and (max-width: ($mobile - 1px)) {
-			padding: 48px 20px;
-		}
-
-		display: flex;
-		flex-direction: column;
-
-		background-color: #fff;
-
-		transform: translateX(100%);
-		@include transition(transform);
-
-		&.is-open {
-			// display: block;
-			transform: translateX(0);
-			transition-delay: 100ms;
-		}
-	}
-
-	@media screen and (min-width: $tablet) {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-grow: 1;
-
-		// margin-left: 20px;
-	}
-
-	@media screen and (min-width: $desktop) {
-		margin-right: 17px;
-	}
+.group-41 {
+	gap: 131px;
 }
 
-.header-nav-list {
-	@extend %markup-list, .flex;
-	gap: $regular-gap;
+.price-cards,
+.price-labels {
+	gap: 30px;
 }
 
-// .header-nav-item {
-// }
+.contacts {
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	gap: 100px;
+}
+
+.page {
+	gap: 180px;
+}
+
+// Logo
+
+.logo {
+	@include fz-lh(36, 54);
+}
+
+/* Header */
+
+.header {
+	display: flex;
+}
+
+.header-nav {
+	display: flex;
+	gap: $menu-items-spacing;
+}
 
 .header-nav-link {
 	@extend .link;
+	line-height: calc(30 / 20);
 }
 
-.header-right {
-	display: flex;
-	align-items: center;
-	gap: $large-spacing;
-	margin-left: auto;
-
-	@media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
-		position: relative;
-		justify-content: center;
-		margin-right: 5px;
-	}
-}
-
-.header-telephone {
-	@media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
-		position: absolute;
-		top: calc(100% + 20px);
-		// left: 50%;
-		// transform: translateX(-50%);
-	}
-}
-
-.header-button {
-	@extend .button;
-}
-
-/* ---------- Hero ---------- */
-
-// .hero {
-// 	@extend .container, .dark;
-
-// 	color: $light;
-
-// 	display: flex;
-// 	gap: 0;
-
-// 	min-height: 580px;
-
-// 	@media screen and (min-width: $tablet) {
-// 		min-height: 680px;
-// 	}
-// }
+/* Hero */
 
 .hero {
-	//
-	// padding-right: 30px;
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		// background-color: $dark;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-
-		@include bg-with-overlay(rgba($bg-dark, 0.2), slider, img3, webp);
-	}
-
-	.container {
-		@extend .dark;
-		// outline: auto;
-		color: $light;
-
-		display: flex;
-		gap: 0;
-
-		min-height: 580px;
-
-		@media screen and (min-width: $tablet) {
-			min-height: 680px;
-		}
-
-		@media screen and (min-width: $desktop) {
-			@include bg-with-overlay(rgba($bg-dark, 0.2), slider, img3, webp);
-
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: top 0 left calc(100px + $container-padding);
-		}
-	}
-}
-
-// Hero sidebar
-
-.hero-sidebar {
-	width: 100px;
-	color: $dark;
-	// padding: 32px 31px 40px 0;
-	padding-bottom: 40px;
-	padding-left: 27px;
 	display: flex;
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		display: none;
-	}
-
-	@media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
-		width: 90px;
-	}
-}
-
-// Hero main
-
-.hero-main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	flex-grow: 1;
-	gap: 184px;
-	position: relative;
-
-	@media screen and (min-width: $tablet) {
-		@include bg-with-overlay(rgba($bg-dark, 0.2), slider, img3, webp);
-
-		// background-position: top 0 left calc(90px + $container-padding);
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-
-	@media screen and (min-width: $tablet) {
-		// padding-left: 118px; // це виглядає потворно :)
-		padding-left: 90px;
-	}
-
-	@media screen and (min-width: $desktop) {
-		padding-left: 100px;
-	}
-
-	// background-color: $dark;
-	// background-size: cover;
-	// background-position: center;
-
-	// @include bg-with-overlay(rgba($bg-dark, 0.2), slider, img3, webp);
-}
-
-.hero-text-block {
-	display: flex;
-	flex-direction: column;
-	gap: $single-spacing;
-}
-
-.hero-sup-heading {
-	@extend .sup-heading;
-
-	animation: top-to-bottom 1000ms ease 100ms both;
 }
 
 .hero-title {
-	@extend %heading;
-
-	@include fz-lh-rem(48, 56);
-
-	@media screen and (min-width: $desktop) {
-		// font-size: 72px;
-		// line-height: calc(85 / 72);
-		@include fz-lh-rem(72, 85);
-	}
-
-	animation: left-to-right 1000ms ease 1200ms both;
-}
-
-.hero-subtitle {
-	animation: bottom-to-top 1000ms ease 2200ms both;
-	max-width: 400px;
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		@include fz-lh-rem(16, 26);
-	}
-}
-
-// Slider
-
-.slider-pagination {
-	@extend %markup-list;
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		display: none;
-	}
-
-	@media screen and (min-width: $tablet) {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		gap: 12px;
-
-		position: absolute;
-		top: calc(50% - 15px);
-		right: 37px;
-	}
-
-	@media screen and (min-width: $desktop) {
-		right: 20px;
-	}
-}
-
-.slider-pagination-item {
-	width: 8px;
-	height: 2px;
-	background-color: currentColor;
-
-	&.active {
-		width: 18px;
-		background-color: $contrast;
-	}
-}
-
-.slider-buttons {
-	@extend %markup-list;
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		display: none;
-	}
-
-	@media screen and (min-width: $tablet) {
-		display: flex;
-		gap: 24px;
-
-		position: absolute;
-		bottom: 40px;
-		right: 20px;
-	}
-}
-
-.slider-btn {
 	font-weight: 600;
-	// font-size: 11px;
-	// line-height: calc(15 / 11);
-	@include fz-lh-rem(11, 15);
-	letter-spacing: 0.1em;
-
-	color: $contrast;
-	background-color: transparent;
-
-	width: 60px;
-	padding-bottom: 8px;
-	border: none;
-	border-bottom: 1px solid currentColor;
-
-	&.prev {
-		text-align: left;
-	}
-
-	&.next {
-		text-align: right;
-	}
-
-	&[disabled] {
-		color: rgba($light, 0.6);
-		// cursor: not-allowed;
-		cursor: auto;
-	}
+	font-size: 64px;
+	line-height: calc(80 / 64);
 }
 
-/* ---------- About ---------- */
+.hero-description {
+	@extend .description;
 
-section.about {
-	//
-	.container {
-		@extend .flex;
-		gap: $regular-gap;
-	}
-
-	.section-content {
-		@media screen and (min-width: $desktop) {
-			padding-right: 100px;
-		}
-	}
-
-	.section-heading {
-		@media screen and (max-width: ($desktop - 1px)) {
-			@include fz-lh-rem(28, 33);
-			max-width: 330px;
-		}
-	}
-
-	.button {
-		align-self: flex-start;
-		margin-top: auto;
-	}
+	font-size: 24px;
+	line-height: calc(36 / 24);
+	margin-top: 40px;
+	margin-bottom: 60px;
 }
 
-// About - left block
+.hero-button {
+	@extend .button;
+	@include fz-lh(36, 54);
 
-.about-images-list {
-	@extend .markup-list;
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		display: none;
-	}
-
-	@media screen and (min-width: $tablet) {
-		display: flex;
-		gap: $regular-gap;
-		flex-direction: column;
-		min-width: calc((100% - $regular-gap) / 2);
-	}
-
-	@media screen and (min-width: $desktop) {
-		flex-direction: row;
-	}
+	min-width: 426px;
+	padding: 23px 64px;
 }
 
-// .about-image {
-// 	width: 100%;
-// }
-
-// .about-images-item {
-// 	@media screen and (min-width: $tablet) {
-// 		width: 330px;
-// 	}
-
-// 	@media screen and (min-width: $desktop) {
-// 		width: 270px;
-// 	}
-// }
-
-.description {
-	// font-size: 14px;
-	// line-height: calc(26 / 14);
-	@include fz-lh-rem(14, 26);
-	color: $dark;
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		margin-bottom: 20px; // + 20px flex gap = 40px total
-	}
+.skills h3 {
+	line-height: calc(45 / 30);
 }
 
-/* ---------- Services and prices ---------- */
+.pricing h3 {
+	line-height: calc(48 / 30);
+}
 
-section.services {
-	@extend .dark;
-	padding: 0px;
+/* Skills */
 
-	.overlay {
-		padding: $section-padding 0;
-		margin: 0 auto;
+section.skills {
+	gap: 0;
 
-		background-color: $bg-dark;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-
-		// background-image: linear-gradient(rgba(#111319, 0.8), rgba(#111319, 0.8)),
-		// url("../images/jpeg/services.jpg");
-
-		// $linear-gradient-color,	$path, 	$filename, 	$extension: jpg
-		@include bg-with-overlay(rgba(#111319, 0.8), services, img, webp);
-	}
-
-	// .container {
-	// 	@extend .flex;
-	// 	flex-direction: column;
-	// 	gap: $regular-gap;
-	// }
-
-	.button {
+	.section-title {
 		align-self: center;
 	}
 }
 
-.services-wrapper {
+.skill {
+	background-color: $skill-bg;
+	border-radius: 10px;
+	padding: 32px 18px;
+}
+
+.skill p {
+	font-size: 16px;
+	line-height: calc(24 / 16);
+}
+
+/* I thank Sarah Edo for her awesome grid-generation tool https: //cssgrid-generator.netlify.app and Yulia Sivonenko for sharing it with her students */
+
+.grid-container {
+	display: grid;
+	height: 980px;
+	margin-top: 0;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-column-gap: 30px;
+	grid-row-gap: 30px;
+}
+
+.speaking {
+	grid-area: 1 / 1 / 4 / 2;
+}
+
+.writing {
+	grid-area: 1 / 2 / 3 / 3;
+}
+
+.reading {
+	grid-area: 1 / 3 / 3 / 4;
+}
+
+.listening {
+	grid-area: 3 / 2 / 4 / 4;
 	display: flex;
-	flex-direction: column;
-	gap: $large-spacing;
+	flex-direction: row-reverse;
+	justify-content: space-between;
 }
 
-/* ---------- Price-list ---------- */
-
-.price-list-wrapper {
-	// https://stackoverflow.com/questions/43726696/splitting-list-of-items-in-two-columns-with-css
-
-	// columns: 1;
-	background-image: linear-gradient(
-		180deg,
-		#171a24 0%,
-		rgba(#171a24, 0.2) 100%
-	);
-
-	@media screen and (min-width: $desktop) {
-		columns: 2;
-		column-gap: 30px;
-
-		background-image: linear-gradient(
-				180deg,
-				#171a24 0%,
-				rgba(#171a24, 0.2) 100%
-			),
-			linear-gradient(180deg, #090b13 0%, rgba(#090b13, 0.2) 100%);
-		background-repeat: no-repeat;
-		background-position: left, right;
-		background-size: calc((100% - $regular-gap) / 2) 100%,
-			calc((100% - $regular-gap) / 2) 100%; // 570px
-	}
-
-	padding-top: 30px;
-	padding-bottom: 30px;
+.skill .content {
+	width: 360px;
 }
 
-.price-list {
-	@extend .markup-list;
-	color: $light;
+.skill.listening .content {
+	width: 330px;
 }
 
-.price-list-item {
-	margin: 0 $single-spacing;
-	display: flex;
-	gap: $list-spacing;
-	align-items: baseline;
+/* About Us */
 
-	@media screen and (max-width: ($mobile - 1px)) {
-		@include fz-lh-rem(11, 15);
-	}
-
-	@media screen and (min-width: $mobile) and (max-width: ($tablet - 1px)) {
-		@include fz-lh-rem(14, 20);
-	}
-
-	&:not(:last-child) {
-		margin-bottom: 20px;
-	}
+.about p {
+	font-size: 20px;
+	line-height: calc(36 / 20);
 }
 
-.price-leader {
-	background-color: rgba($light, 0.12);
-	height: 1px;
-
-	flex-grow: 1;
-}
-
-/* ---------- Why us ---------- */
-
-section.why-us {
-	//
-	.container {
-		display: flex;
-		flex-direction: column;
-		gap: $large-spacing;
-
-		@media screen and (min-width: $tablet) {
-			.section-content {
-				max-width: 65%;
-			}
-		}
-
-		@media screen and (min-width: $desktop) {
-			flex-direction: row-reverse;
-			gap: $regular-gap;
-
-			.section-content {
-				max-width: calc((100% - $regular-gap) / 2);
-				padding-right: 70px;
-			}
-		}
-	}
-}
-
-.stats {
-	@extend .markup-list;
-
-	display: flex;
+.group-41 {
+	justify-content: space-around;
 	justify-content: center;
-	flex-wrap: wrap;
-	gap: $regular-gap;
-
-	padding-top: 30px;
-
-	@media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
-		max-width: 450px;
-		margin-left: auto;
-	}
-
-	@media screen and (min-width: $desktop) {
-		padding: 0 100px;
-	}
-}
-
-.stat {
-	height: 133px;
-
-	width: 194px;
-	padding: $single-spacing 32px;
-
-	@media screen and (min-width: $tablet) {
-		width: 210px;
-		padding: $single-spacing $large-spacing;
-	}
-
-	@media screen and (min-width: $desktop) {
-		width: 170px;
-		padding: $single-spacing 24px;
-	}
-
-	color: $darker;
-	background-color: $bg-light;
-
 	text-align: center;
-
-	@media screen and (min-width: $mobile) {
-		&:nth-child(odd) {
-			margin-top: -30px;
-		}
-	}
 }
 
-.stat-number {
-	font-weight: 700;
-	// font-size: 42px;
-	// line-height: calc(57 / 42);
-	@include fz-lh-rem(42, 57);
-	letter-spacing: 0.05em;
-	margin-bottom: 6px;
-
-	&:after {
-		content: "+";
-		font-size: 16px;
-		color: $accent;
-		vertical-align: top;
-	}
+.group-41 p {
+	line-height: calc(30 / 20);
 }
 
-.stat-name {
+.group-41 p.count {
+	color: $count-gray;
 	font-weight: 600;
-	// font-size: 11px;
-	// line-height: calc(15 / 11);
-	@include fz-lh-rem(11, 15);
+	font-size: 48px;
+	line-height: calc(72 / 48);
+	margin-bottom: 0;
 }
 
-/* ---------- Our barbers ---------- */
+/* Pricing */
 
-section.barbers {
-	background-color: $bg-light;
+section.pricing {
+	gap: 0;
 
-	.container {
-		display: flex;
-		flex-direction: column;
-		gap: $large-spacing;
-
-		@media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
-			padding: 0 calc($container-padding + 120px);
-		}
-
-		// @media screen and (min-width: $desktop) {
-		// 	gap: $regular-gap;
-		// }
-	}
-}
-
-.team-cards {
-	@extend .markup-list;
-
-	display: flex;
-	flex-wrap: wrap;
-	gap: $regular-gap;
-
-	@media screen and (max-width: ($desktop - 1px)) {
-		row-gap: 64px;
-	}
-}
-
-.team-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	@media screen and (max-width: ($desktop - 1px)) {
-		@include flex-basis(1);
-	}
-
-	@media screen and (min-width: $desktop) {
-		// max-width: 370px;
-		// flex-basis: 370px;
-		@include flex-basis(3);
-	}
-
-	text-align: center;
-}
-
-.team-card-meta {
-	padding-top: $regular-gap;
-}
-
-.team-card-name {
-	line-height: calc(25 / 18);
-	margin-bottom: 8px;
-	color: $darker;
-}
-
-.team-card-position {
-	// font-size: 14px;
-	// line-height: calc(19 / 14);
-	@include fz-lh-rem(14, 19);
-	color: $accent;
-}
-
-// Team card social media links
-
-.social-links {
-	@extend .markup-list;
-	display: flex;
-	justify-content: center;
-	margin-top: $regular-gap;
-	gap: $list-spacing;
-}
-
-.social-link {
-	@extend .link;
-
-	color: $darker;
-	background-color: $contrast;
-	height: 44px;
-	width: 44px;
-	border-radius: 50%;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	&:hover,
-	&:focus {
-		color: $accent;
-	}
-}
-
-.social-link-icon {
-	@extend .icon, .rotatable, .w-transformable-icon;
-
-	width: 20px;
-	height: 20px;
-
-	.footer & {
-		fill: $contrast;
-	}
-}
-
-.rotatable {
-	transition: transform 200ms ease-in-out 10ms;
-
-	.w-transformable-icon:hover &,
-	.w-transformable-icon:focus & {
-		transform: rotate(360deg);
-		// animation: iconScroll 2500ms;
-	}
-}
-
-/* ---------- Gallery ---------- */
-
-section.gallery {
-	//
-	.container {
-		display: flex;
-		flex-direction: column;
-		gap: $large-spacing;
-	}
-}
-
-.gallery-list {
-	@extend .markup-list;
-	display: flex;
-	flex-wrap: wrap;
-	gap: $regular-gap;
-}
-
-.gallery-item {
-	@media screen and (max-width: ($tablet - 1px)) {
-		// width: 418px;
-		@include flex-basis(1);
-	}
-
-	@media screen and (min-width: $tablet) {
-		// width: 330px;
-		@include flex-basis(2);
-	}
-
-	@media screen and (min-width: $desktop) {
-		// width: 270px;
-		@include flex-basis(4);
-	}
-}
-
-/* ---------- Booking and contacts block ---------- */
-
-.booking-and-contacts-block {
-	//
-	background-color: $bg-dark;
-
-	.overlay {
-		@include bg-with-overlay(rgba(#191c26, 0.9), contacts, img, webp);
-
-		background-position: left 0% bottom 0%;
-		background-repeat: no-repeat;
-		background-size: 100% 45%;
-		// background-size: contain;
-
-		@media screen and (min-width: $desktop) {
-			//
-			background-position: calc(100% + 30px) 0%;
-			background-repeat: no-repeat;
-			background-size: 50% 100%;
-
-			// @include bg-with-overlay(rgba(#191c26, 0.9), contacts, img, webp);
-		}
-	}
-
-	.container {
-		display: flex;
-		flex-direction: column;
-
-		@media screen and (min-width: $desktop) {
-			//
-			flex-direction: row;
-			gap: $regular-gap;
-		}
-	}
-}
-
-section.online-booking,
-section.contacts {
-	//
-	@media screen and (min-width: $desktop) {
-		width: 50%;
-		flex-basis: fill;
-	}
-
-	.section-heading {
-		@media screen and (max-width: ($tablet - 1px)) {
-			align-self: center;
-		}
-	}
-}
-
-/* ---------- Online-booking (left block) ---------- */
-
-section.online-booking {
-	@extend .dark;
-
-	display: flex;
-	flex-direction: column;
-	gap: $large-spacing;
-}
-
-.booking-form {
-	display: flex;
-	flex-direction: column;
-	gap: $large-spacing;
-
-	.button {
+	.section-title {
 		align-self: center;
-
-		@media screen and (min-width: $tablet) {
-			align-self: flex-start;
-		}
 	}
 }
 
-.text-fields {
-	display: flex;
-	// flex-direction: column;
-	// gap: $large-spacing;
-	flex-wrap: wrap;
-	column-gap: $regular-gap;
-	row-gap: $large-spacing;
-}
-
-.text-field-wrapper {
-	position: relative;
-	color: rgba($light, 0.4);
-
-	width: 100%;
-
-	&.half-sized {
-		@media screen and (min-width: $tablet) {
-			width: calc((100% - $regular-gap) / 2);
-		}
-	}
-
-	&:hover,
-	&:focus {
-		color: $contrast;
-	}
-}
-
-.text-field {
-	width: 100%;
-	height: 100%;
-	min-height: 24px;
-
-	font-size: inherit;
-	font-family: "Open Sans";
-
-	background-color: inherit;
-	color: $light;
-
-	border: none;
-	border-bottom: 1px solid currentColor;
-
-	transition: border-color $transition-duration $transition-timing-function;
-
-	&:hover,
-	&:focus {
-		border-color: $contrast;
-	}
-}
-
-.hovering-label {
-	font-family: "Open Sans";
-	font-weight: 600;
-	// font-size: 11px;
-	// line-height: calc(15 / 11);
-	@include fz-lh-rem(11, 15);
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	transition: color $transition-duration $transition-timing-function,
-		transform $transition-duration $transition-timing-function;
-
-	.text-field:focus + &,
-	.text-field:not(:placeholder-shown) + & {
-		// transform: translateY(-20px);
-		transform: translateY(-1.4em);
-		color: $contrast;
-	}
-
-	.text-field:required + &::after {
-		content: "*";
-	}
-}
-
-.message-field {
-	resize: none;
-}
-
-/* ---------- Contacts (right block) ---------- */
-
-section.contacts {
-	@extend .dark;
-
-	.section-content {
-		display: flex;
-		flex-direction: column;
-
-		@media screen and (min-width: $tablet) and (max-width: ($desktop - 1px)) {
-			flex-direction: row;
-			gap: $regular-gap;
-		}
-
-		@media screen and (min-width: $desktop) {
-			padding-left: 100px;
-		}
-	}
-
-	.section-heading {
-		margin-bottom: 40px;
-
-		@media screen and (max-width: ($tablet - 1px)) {
-			text-align: center;
-		}
-
-		@media screen and (min-width: $desktop) {
-			padding-left: 100px;
-		}
-	}
-
-	.sup-heading {
-		color: $contrast;
-	}
-}
-
-.contacts-list {
-	@extend .markup-list;
-	min-width: 330px;
-
-	@media screen and (max-width: ($tablet - 1px)) {
-		margin-bottom: $large-spacing;
-	}
-
-	@media screen and (min-width: $desktop) {
-		margin-bottom: 70px;
-	}
-
-	display: flex;
-	flex-direction: column;
-	gap: $single-spacing;
-}
-
-.contacts-item {
-	line-height: calc(30 / 18);
-}
-
-.contacts-link {
-	@extend .link;
-
-	// font-size: 18px;
-	font-size: rem-calc(18);
-	font-weight: 400;
-
-	display: flex;
-	align-items: center;
-	gap: 16px;
-
-	color: $light;
-
-	&.address-link {
-		font-weight: 700;
-	}
-
-	&.email-link {
-		text-decoration-line: underline;
-	}
-}
-
-.contacts-icon {
-	@extend .icon;
-
-	fill: transparent;
-	stroke: currentColor;
-}
-
-.contacts-item:first-child .contacts-icon {
-	transform: translateY(-13px);
-}
-
-.working-hours {
-	// display: flex;
-	// flex-direction: column;
-
-	.working-hours-text {
-		color: $light;
-	}
-}
-
-/* ---------- Footer ---------- */
-
-.footer {
-	color: $light;
-	font-weight: 600;
-	// font-size: 11px;
-	// line-height: calc(15 / 11);
-	@include fz-lh-rem(11, 15);
-
-	.container {
-		display: flex;
-		justify-content: space-between;
-
-		padding-top: 56px;
-		padding-bottom: 56px;
-
-		@media screen and (max-width: ($tablet - 1px)) {
-			flex-direction: column-reverse;
-			gap: $single-spacing;
-
-			padding-top: $large-spacing;
-			padding-bottom: $large-spacing;
-		}
-	}
-
-	.follow-us {
-		@media screen and (max-width: ($tablet - 1px)) {
-			margin-left: auto;
-		}
-	}
-}
-
-/* ---------- Modal window ---------- */
-
-.backdrop {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: $z-backdrop;
-
-	width: 100%;
-	height: 100%;
-
-	background-color: rgba(#111319, 0.4);
-	backdrop-filter: blur(2px);
-
-	transition: opacity $transition-duration $transition-timing-function,
-		visibility $transition-duration $transition-timing-function;
-
-	&.is-hidden {
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-	}
-}
-
-.modal {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-
-	transform: translate(-50%, -50%);
-
-	width: 400px;
-	min-height: 500px;
-	border-radius: 4px;
-	box-shadow: 2px 2px 2px darkgray;
-
-	background-color: $bg-default;
-}
-
-.modal-close-button {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-
-	width: 32px;
-	height: 32px;
-
-	border: 1px solid $darker;
-	border-radius: 50%;
-
+.price-label {
+	background-color: #eeeeee;
+	border-radius: 5px;
+	padding: 5px 10px 0;
+	width: 260px;
+	height: 45px;
 	display: inline-flex;
 	justify-content: center;
-	align-items: center;
+	justify-content: space-around;
+	align-items: baseline;
+}
 
-	background-color: transparent;
+p.price {
+	color: $accent-dark;
+	font-size: 24px;
+}
+
+p.period {
+	color: #546269;
+	font-size: 18px;
+}
+
+.price-labels li {
+	width: 426px;
+}
+
+/* Contact Us */
+
+.contacts p {
+	width: 650px;
+}
+
+.enter-email {
+	width: 425px;
+	height: 70px;
+	border: 1px solid $accent-light;
+	border-radius: 10px;
+	padding: 20px 30px;
+	margin-right: 30px;
+}
+
+.enter-email::placeholder {
+	color: $accent-light;
+	font-family: "Poppins";
+	font-size: 16px;
+	line-height: calc(30 / 16);
+}
+
+/* Footer */
+
+.footer {
+	border-top: 1px solid $footer-border;
+
+	display: flex;
+	justify-content: space-between;
+
+	margin: 0 55px;
+}
+
+.footer-menu {
+	display: flex;
+	gap: $footer-items-spacing;
+
+	font-size: 24px;
+	color: $accent-light;
 }

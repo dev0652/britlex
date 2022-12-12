@@ -57,7 +57,7 @@ h2,
 }
 
 .section p,
-.policies {
+.footer-menu {
 	color: var(--accent-light);
 }
 
@@ -71,7 +71,7 @@ h2,
 .price-labels,
 .group-41,
 .footer,
-.policies {
+.footer-menu {
 	display: flex;
 }
 
@@ -125,7 +125,7 @@ h2,
 	gap: 100px;
 }
 
-.policies {
+.footer-menu {
 	gap: 80px;
 }
 
@@ -375,6 +375,6 @@ p.period {
 	margin-top: 55px;
 }
 
-.policies {
+.footer-menu {
 	font-size: 24px;
 }

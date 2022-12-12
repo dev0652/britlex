@@ -1,18 +1,36 @@
 // Breakpoints
 
-$mobile: 480px;
+$mobile: 320px;
+$mobile-wide: 575px;
 $tablet: 768px;
-$desktop: 1200px;
+$tablet-wide: 992px;
+$desktop: 1338px;
 
 // Fonts
-$primary-font: "Open Sans", sans-serif;
+$primary-font: "Poppins", sans-serif;
 // $primary-font-size: 14px;
-$primary-font-size: 14px;
-$secondary-font: "Raleway", sans-serif;
+$primary-font-size: 2opx;
 
 // Colors
-$accent: #ff6c00;
+$accent-light: #8f95a5;
+$accent-dark: #263238;
 $contrast: #fff;
+$count-gray: #2a3246;
+$skill-bg: #f5f5f5;
+$footer-border: #c4c4c4;
+$logo-alt: #939393;
+
+:root {
+	background-color: #e5e5e5;
+
+	/* Color variables	 */
+	--accent-light: #8f95a5;
+	--accent-dark: #263238;
+	--count-gray: #2a3246;
+	--skill-bg: #f5f5f5;
+	--footer-border: #c4c4c4;
+	--logo-alt: #939393;
+}
 
 // Text
 $dark: #555555;
@@ -25,17 +43,19 @@ $bg-dark: #191c26;
 $bg-light: #f7f7f7;
 
 // Borders
-$standard-radius: 4px;
+$standard-radius: 10px;
 
 // Spacings
 $regular-gap: 30px;
 
 $single-spacing: 20px;
 $double-spacing: $single-spacing * 2;
+$large-spacing: 40px;
 
-$large-spacing: 44px;
 $list-spacing: 10px;
-$list-icon-spacing: 16px;
+$menu-items-spacing: 50px;
+$footer-items-spacing: 80px;
+$section-title-spacing: 60px;
 
 // $container-padding: 15px;
 $desktop-version-margin: 215px;
@@ -72,9 +92,6 @@ $section-padding: var(--section-padding);
 $z-header: 1;
 $z-backdrop: 10;
 $z-modal: 100;
-
-// SVG
-$icon-inactive: #000;
 
 // Transitions
 $transition-duration: 300ms;

@@ -1,112 +1,98 @@
-/* Links */
+:root {
+	font-family: $primary-font;
+}
 
+body {
+	color: $accent-dark;
+	background-color: $contrast;
+	font-size: $primary-font-size;
+	line-height: 1.5;
+}
+
+// Links
+
+%link,
 .link {
 	text-decoration: none;
 	font-weight: 500;
 
 	@include transition(color);
 
-	&:hover,
-	&:focus,
-	&.current {
-		color: $accent;
+	// &:hover,
+	// &:focus,
+	// &.current {
+	// 	color: ;
+	// }
+}
+
+.section {
+	display: flex;
+	gap: 144px;
+}
+
+// Logo
+
+.logo {
+	@extend .link;
+
+	// font-family: $primary-font;
+	@include fz-lh(36, 54);
+	// display: block;
+	color: #000;
+
+	& span {
+		color: $logo-alt;
 	}
 }
 
-/* Logos */
-
-%logo {
-	@extend .link;
-
-	font-family: $secondary-font;
-	font-size: 26px;
-	font-weight: 700;
-	display: block;
-
-	color: $accent;
-}
-
-/* Buttons */
+// Buttons
 
 .button {
 	border: none;
 	border-radius: $standard-radius;
-	font-size: 16px;
-}
-
-.accented-button {
-	@extend .button;
-
-	font-weight: 700;
-	font-size: 16px;
-	line-height: calc(30 / 16);
-	letter-spacing: 0.06em;
-
-	background-color: $accent;
-	color: $contrast;
-
-	box-shadow: 0px 4px 4px rgba(#000000, 0.15);
-
-	border-radius: $standard-radius;
-
-	@include transition(background-color);
-
-	&:hover,
-	&:focus {
-		background-color: $accent-darker;
-	}
-}
-
-/* SVG icons */
-
-.icon {
-	fill: currentColor;
-	@include transition(fill);
-}
-
-.rotatable {
-	@include transition(transform, 200ms, ease-in-out, 10ms);
-
-	.icon-transformable:hover &,
-	.icon-transformable:focus & {
-		transform: rotate(360deg);
-		// animation: iconScroll 2500ms;
-	}
-}
-
-/* Social media links (icons styled separately) */
-
-.social-links-list {
-	@extend .markup-list, .flex, .spaced-list, .justify-center;
-}
-
-.social-link {
-	@extend .link, .icon-transformable;
-	@extend %flex-centered;
-
-	color: $link-inactive;
-	height: 44px;
-	width: 44px;
-	// border: none;
-	border-radius: 50%;
+	font-size: to-rem(20);
+	letter-spacing: 0.03em;
 
 	@include transition-multiple(color, background-color);
 
-	.footer & {
-		background: rgba(#ffffff, 0.1);
-	}
+	background-color: $accent-dark;
+	color: $contrast;
 
 	&:hover,
 	&:focus {
-		color: $contrast;
-		background-color: $accent;
+		color: #000;
+		background-color: $contrast;
+	}
+
+	.unfilled {
+		color: #000;
+		background-color: inherit;
+		border: 2px solid $accent-dark;
+
+		&:hover,
+		&:focus {
+			background-color: $accent-dark;
+			color: $contrast;
+		}
 	}
 }
 
-.social-icon {
-	@extend .icon, .rotatable;
+// Text
 
-	.footer & {
-		fill: $contrast;
-	}
+.section-title {
+	font-size: 48px;
+	font-weight: 600;
+	margin-bottom: 60px;
+	color: #000;
+}
+
+.subsection-title {
+	font-weight: 600;
+	font-size: 30px;
+	color: $accent-dark;
+	margin-bottom: 20px;
+}
+
+.description {
+	color: $accent-light;
 }
