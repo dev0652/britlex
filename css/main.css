@@ -326,6 +326,42 @@ body {
   line-height: 1.5;
 }
 
+.container {
+  outline: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 575px) {
+  .container {
+    width: 575px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    width: 992px;
+  }
+}
+@media screen and (min-width: 1338px) {
+  .container {
+    width: 1338px;
+  }
+}
+
 .link,
 .header-nav-link,
 .logo {
@@ -341,27 +377,28 @@ body {
           transition-delay: 0s;
 }
 
-.section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 144px;
-}
-
 .logo {
-  font-size: 36px;
+  font-size: 24px;
   line-height: 1.5;
   color: #000;
+}
+@media screen and (min-width: 1338px) {
+  .logo {
+    font-size: 36px;
+    line-height: 1.5;
+  }
 }
 .logo span {
   color: #939393;
 }
 
-.button, .hero-button {
+.button, .hero-button, .header-button {
   border: none;
+  border: 2px solid transparent;
   border-radius: 10px;
-  font-size: to-rem(20);
-  letter-spacing: 0.03em;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px 43px;
   -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
   -webkit-transition-duration: 300ms;
@@ -371,25 +408,40 @@ body {
   background-color: #263238;
   color: #fff;
 }
-.button:hover, .hero-button:hover, .button:focus, .hero-button:focus {
+@media screen and (min-width: 1338px) {
+  .button, .hero-button, .header-button {
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 13px 51px;
+  }
+}
+.button:hover, .hero-button:hover, .header-button:hover, .button:focus, .hero-button:focus, .header-button:focus {
   color: #000;
   background-color: #fff;
+  border-color: #263238;
 }
-.button .unfilled, .hero-button .unfilled {
+.button.unfilled, .unfilled.hero-button, .header-button {
   color: #000;
-  background-color: inherit;
-  border: 2px solid #263238;
+  background-color: #fff;
+  border-color: #263238;
 }
-.button .unfilled:hover, .hero-button .unfilled:hover, .button .unfilled:focus, .hero-button .unfilled:focus {
+.button.unfilled:hover, .unfilled.hero-button:hover, .header-button:hover, .button.unfilled:focus, .unfilled.hero-button:focus, .header-button:focus {
   background-color: #263238;
   color: #fff;
 }
 
-.section-title {
-  font-size: 48px;
+.section-title, .hero-title {
   font-weight: 600;
-  margin-bottom: 60px;
   color: #000;
+  font-size: 24px;
+  line-height: 3.3333333333;
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 1338px) {
+  .section-title, .hero-title {
+    font-size: 48px;
+    line-height: 1.25;
+  }
 }
 
 .subsection-title {
@@ -401,79 +453,69 @@ body {
 
 .description, .hero-description {
   color: #8f95a5;
+  margin-bottom: 30px;
 }
 
-.page,
-.price-cards,
-.price-labels,
-.group-41 {
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.page,
-.skills,
-.pricing {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 550px;
+}
+@media screen and (min-width: 1338px) {
+  main {
+    gap: 180px;
+  }
 }
 
-.header,
-.footer,
-.skills,
-.pricing {
+/* -------------- Header -------------- */
+.header {
+  margin: 36px 0;
+}
+.header .container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-
-.header {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 55px;
-}
-
-.group-41 {
-  gap: 131px;
-}
-
-.price-cards,
-.price-labels {
-  gap: 30px;
-}
-
-.contacts {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 100px;
-}
-
-.page {
-  gap: 180px;
+@media screen and (min-width: 1338px) {
+  .header {
+    margin: 55px 0;
+  }
 }
 
 .logo {
-  font-size: 36px;
+  font-size: 24px;
   line-height: 1.5;
 }
-
-/* Header */
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media screen and (min-width: 1338px) {
+  .logo {
+    font-size: 36px;
+    line-height: 1.5;
+  }
 }
 
-.header-nav {
+.header-menu-wrapper {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header-menu-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.header-nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -482,50 +524,86 @@ body {
 
 .header-nav-link {
   line-height: 1.5;
+  display: inline-block;
+  padding: 20px 0;
 }
 
-/* Hero */
-.hero {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media screen and (min-width: 1338px) {
+  .header-button {
+    padding: 20px 56px;
+    min-width: 312px;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-left: 120px;
+  }
+}
+
+/* -------------- Hero -------------- */
+@media screen and (min-width: 1338px) {
+  .hero .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-column-gap: 144px;
+       -moz-column-gap: 144px;
+            column-gap: 144px;
+  }
 }
 
 .hero-title {
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 1.25;
+  font-size: 24px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 1338px) {
+  .hero-title {
+    font-size: 64px;
+    line-height: 1.25;
+    margin-bottom: 40px;
+  }
 }
 
 .hero-description {
-  font-size: 24px;
+  font-size: 14px;
   line-height: 1.5;
-  margin-top: 40px;
-  margin-bottom: 60px;
+}
+@media screen and (min-width: 1338px) {
+  .hero-description {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 60px;
+  }
 }
 
 .hero-button {
-  font-size: 36px;
-  line-height: 1.5;
-  min-width: 426px;
-  padding: 23px 64px;
-}
-
-.skills h3 {
+  font-size: 16px;
   line-height: 1.5;
 }
-
-.pricing h3 {
-  line-height: 1.6;
+@media screen and (min-width: 1338px) {
+  .hero-button {
+    font-size: 36px;
+    line-height: 1.5;
+    min-width: 426px;
+    padding: 23px 64px;
+  }
 }
 
-/* Skills */
-section.skills {
-  gap: 0;
+/* -------------- Skills -------------- */
+section.skills .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-section.skills .section-title {
+section.skills .section-title, section.skills .hero-title {
   -ms-flex-item-align: center;
       align-self: center;
+}
+section.skills .subsection-title {
+  line-height: 1.5;
 }
 
 .skill {
@@ -533,13 +611,11 @@ section.skills .section-title {
   border-radius: 10px;
   padding: 32px 18px;
 }
-
-.skill p {
+.skill .description, .skill .hero-description {
   font-size: 16px;
   line-height: 1.5;
 }
 
-/* I thank Sarah Edo for her awesome grid-generation tool https: //cssgrid-generator.netlify.app and Yulia Sivonenko for sharing it with her students */
 .grid-container {
   display: grid;
   height: 980px;
@@ -584,26 +660,44 @@ section.skills .section-title {
   width: 330px;
 }
 
-/* About Us */
+/* -------------- About Us -------------- */
+@media screen and (min-width: 1338px) {
+  section.about .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-column-gap: 144px;
+       -moz-column-gap: 144px;
+            column-gap: 144px;
+  }
+}
+
 .about p {
   font-size: 20px;
   line-height: 1.8;
 }
 
 .group-41 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 131px;
   text-align: center;
 }
-
-.group-41 p {
+.group-41 .description, .group-41 .hero-description {
   line-height: 1.5;
 }
 
-.group-41 p.count {
+.count {
   color: #2a3246;
   font-weight: 600;
   font-size: 48px;
@@ -611,16 +705,35 @@ section.skills .section-title {
   margin-bottom: 0;
 }
 
-/* Pricing */
-section.pricing {
-  gap: 0;
+/* -------------- Pricing -------------- */
+section.pricing .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-section.pricing .section-title {
+section.pricing .section-title, section.pricing .hero-title {
   -ms-flex-item-align: center;
       align-self: center;
 }
+section.pricing .subsection-title {
+  line-height: 1.6;
+}
 
-.price-label {
+.price-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+.price-card {
+  -ms-flex-preferred-size: calc((100% - 60px) / 3);
+      flex-basis: calc((100% - 60px) / 3);
+}
+
+.price-card-label {
+  width: 426px;
   background-color: #eeeeee;
   border-radius: 5px;
   padding: 5px 10px 0;
@@ -639,79 +752,99 @@ section.pricing .section-title {
           align-items: baseline;
 }
 
-p.price {
+.price {
   color: #263238;
   font-size: 24px;
 }
 
-p.period {
+.period {
   color: #546269;
   font-size: 18px;
 }
 
-.price-labels li {
-  width: 426px;
+/* -------------- Contact Us -------------- */
+@media screen and (min-width: 1338px) {
+  section.contacts .container {
+    -webkit-column-gap: 144px;
+       -moz-column-gap: 144px;
+            column-gap: 144px;
+  }
+}
+section.contacts .description, section.contacts .hero-description {
+  max-width: 650px;
 }
 
-/* Contact Us */
-.contacts p {
-  width: 650px;
+.subscribe-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
 }
 
-.enter-email {
+.subscribe-form-input {
   width: 425px;
   height: 70px;
   border: 1px solid #8f95a5;
   border-radius: 10px;
-  padding: 20px 30px;
-  margin-right: 30px;
+  min-height: 100%;
+  padding-left: 30px;
 }
-
-.enter-email::-webkit-input-placeholder {
+.subscribe-form-input::-webkit-input-placeholder {
   color: #8f95a5;
-  font-family: "Poppins";
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.875;
+}
+.subscribe-form-input::-moz-placeholder {
+  color: #8f95a5;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.875;
+}
+.subscribe-form-input:-ms-input-placeholder {
+  color: #8f95a5;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.875;
+}
+.subscribe-form-input::-ms-input-placeholder {
+  color: #8f95a5;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.875;
+}
+.subscribe-form-input::placeholder {
+  color: #8f95a5;
+  font-family: inherit;
   font-size: 16px;
   line-height: 1.875;
 }
 
-.enter-email::-moz-placeholder {
-  color: #8f95a5;
-  font-family: "Poppins";
-  font-size: 16px;
-  line-height: 1.875;
+@media screen and (min-width: 1338px) {
+  .subscribe-form-button {
+    min-width: 312px;
+    padding: 18px 56px;
+  }
 }
 
-.enter-email:-ms-input-placeholder {
-  color: #8f95a5;
-  font-family: "Poppins";
-  font-size: 16px;
-  line-height: 1.875;
-}
-
-.enter-email::-ms-input-placeholder {
-  color: #8f95a5;
-  font-family: "Poppins";
-  font-size: 16px;
-  line-height: 1.875;
-}
-
-.enter-email::placeholder {
-  color: #8f95a5;
-  font-family: "Poppins";
-  font-size: 16px;
-  line-height: 1.875;
-}
-
-/* Footer */
+/* -------------- Footer -------------- */
 .footer {
-  border-top: 1px solid #c4c4c4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 55px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #c4c4c4;
+  margin: 36px 0;
+}
+@media screen and (min-width: 1338px) {
+  .footer {
+    margin: 55px 0;
+  }
 }
 
 .footer-menu {

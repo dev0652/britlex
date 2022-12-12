@@ -9,6 +9,25 @@ body {
 	line-height: 1.5;
 }
 
+.container {
+	outline: auto;
+
+	display: flex;
+
+	padding-left: $container-padding;
+	padding-right: $container-padding;
+	margin-left: auto;
+	margin-right: auto;
+
+	@each $device, $width in $breakpoints {
+		@include media($device) {
+			width: $width;
+		}
+	}
+}
+
+// .section {}
+
 // Links
 
 %link,
@@ -25,20 +44,18 @@ body {
 	// }
 }
 
-.section {
-	display: flex;
-	gap: 144px;
-}
-
 // Logo
 
 .logo {
 	@extend .link;
 
 	// font-family: $primary-font;
-	@include fz-lh(36, 54);
-	// display: block;
+	@include fz-lh(24, 36);
 	color: #000;
+
+	@include media(desktop) {
+		@include fz-lh(36, 54);
+	}
 
 	& span {
 		color: $logo-alt;
@@ -49,9 +66,16 @@ body {
 
 .button {
 	border: none;
-	border-radius: $standard-radius;
-	font-size: to-rem(20);
-	letter-spacing: 0.03em;
+	border: $border-width solid transparent;
+	border-radius: $border-radius;
+
+	@include fz-lh(14, 21);
+	padding: calc(14px - $border-width) 43px;
+
+	@include media(desktop) {
+		@include fz-lh(20, 30);
+		padding: calc(15px - $border-width) 51px;
+	}
 
 	@include transition-multiple(color, background-color);
 
@@ -62,12 +86,13 @@ body {
 	&:focus {
 		color: #000;
 		background-color: $contrast;
+		border-color: $accent-dark;
 	}
 
-	.unfilled {
+	&.unfilled {
 		color: #000;
-		background-color: inherit;
-		border: 2px solid $accent-dark;
+		background-color: $contrast;
+		border-color: $accent-dark;
 
 		&:hover,
 		&:focus {
@@ -80,10 +105,14 @@ body {
 // Text
 
 .section-title {
-	font-size: 48px;
 	font-weight: 600;
-	margin-bottom: 60px;
 	color: #000;
+	@include fz-lh(24, 80);
+	margin-bottom: 60px;
+
+	@include media(desktop) {
+		@include fz-lh(48, 60);
+	}
 }
 
 .subsection-title {
@@ -95,4 +124,5 @@ body {
 
 .description {
 	color: $accent-light;
+	margin-bottom: 30px;
 }

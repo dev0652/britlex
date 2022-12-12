@@ -1,10 +1,18 @@
 // Breakpoints
 
 $mobile: 320px;
-$mobile-wide: 575px;
+$phablet: 575px;
 $tablet: 768px;
 $tablet-wide: 992px;
 $desktop: 1338px;
+
+$breakpoints: (
+	"mobile": 320px,
+	"phablet": 575px,
+	"tablet": 768px,
+	"tablet-wide": 992px,
+	"desktop": 1338px,
+);
 
 // Fonts
 $primary-font: "Poppins", sans-serif;
@@ -43,7 +51,8 @@ $bg-dark: #191c26;
 $bg-light: #f7f7f7;
 
 // Borders
-$standard-radius: 10px;
+$border-radius: 10px;
+$border-width: 2px;
 
 // Spacings
 $regular-gap: 30px;
