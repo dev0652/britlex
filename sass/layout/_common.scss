@@ -1,0 +1,112 @@
+/* Links */
+
+.link {
+	text-decoration: none;
+	font-weight: 500;
+
+	@include transition(color);
+
+	&:hover,
+	&:focus,
+	&.current {
+		color: $accent;
+	}
+}
+
+/* Logos */
+
+%logo {
+	@extend .link;
+
+	font-family: $secondary-font;
+	font-size: 26px;
+	font-weight: 700;
+	display: block;
+
+	color: $accent;
+}
+
+/* Buttons */
+
+.button {
+	border: none;
+	border-radius: $standard-radius;
+	font-size: 16px;
+}
+
+.accented-button {
+	@extend .button;
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: calc(30 / 16);
+	letter-spacing: 0.06em;
+
+	background-color: $accent;
+	color: $contrast;
+
+	box-shadow: 0px 4px 4px rgba(#000000, 0.15);
+
+	border-radius: $standard-radius;
+
+	@include transition(background-color);
+
+	&:hover,
+	&:focus {
+		background-color: $accent-darker;
+	}
+}
+
+/* SVG icons */
+
+.icon {
+	fill: currentColor;
+	@include transition(fill);
+}
+
+.rotatable {
+	@include transition(transform, 200ms, ease-in-out, 10ms);
+
+	.icon-transformable:hover &,
+	.icon-transformable:focus & {
+		transform: rotate(360deg);
+		// animation: iconScroll 2500ms;
+	}
+}
+
+/* Social media links (icons styled separately) */
+
+.social-links-list {
+	@extend .markup-list, .flex, .spaced-list, .justify-center;
+}
+
+.social-link {
+	@extend .link, .icon-transformable;
+	@extend %flex-centered;
+
+	color: $link-inactive;
+	height: 44px;
+	width: 44px;
+	// border: none;
+	border-radius: 50%;
+
+	@include transition-multiple(color, background-color);
+
+	.footer & {
+		background: rgba(#ffffff, 0.1);
+	}
+
+	&:hover,
+	&:focus {
+		color: $contrast;
+		background-color: $accent;
+	}
+}
+
+.social-icon {
+	@extend .icon, .rotatable;
+
+	.footer & {
+		fill: $contrast;
+	}
+}

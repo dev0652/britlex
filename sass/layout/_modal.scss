@@ -1,0 +1,284 @@
+/* Modal window */
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+
+	background: rgba(#000000, 0.2);
+	backdrop-filter: blur(2px);
+
+	cursor: not-allowed;
+
+	opacity: 1;
+	@include transition(opacity, 500ms, linear);
+
+	&.is-hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	@media screen and (max-width: $mobile) {
+		padding: 0 15px;
+	}
+
+	@media screen and (max-width: ($tablet - 1px)) {
+		// padding-top: 93px;
+		padding-top: 11vh;
+	}
+}
+
+.modal-window {
+	background-color: $light-bg;
+	cursor: auto;
+	text-align: center;
+
+	border-radius: $standard-radius;
+	box-shadow: 0px 1px 3px rgba(#000000, 0.12), 0px 1px 1px rgba(#000000, 0.14),
+		0px 2px 1px rgba(#000000, 0.2);
+
+	padding: 40px;
+
+	@media screen and (max-width: 320px) {
+		padding: 12vw;
+	}
+
+	@media screen and (max-width: ($tablet - 1px)) {
+		position: static;
+		margin: 0 auto;
+		transform: scale(1);
+	}
+
+	@media screen and (min-width: $mobile) {
+		width: 450px;
+	}
+
+	@media screen and (min-width: $tablet) {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%) scale(1);
+		z-index: 3;
+		padding: 40px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		width: 528px;
+	}
+
+	@include transition(transform);
+
+	.backdrop.is-hidden {
+		& {
+			transform: translate(-50%, -50%) scale(0);
+		}
+	}
+}
+
+.modal-form-title {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	margin-bottom: 12px;
+}
+
+/* Text field group */
+
+.text-field-group {
+	@extend .markup-list;
+
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.text-field-item {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+
+	&:not(:last-of-type) {
+		margin-bottom: 10px;
+	}
+}
+
+.text-field-label {
+	font-size: 12px;
+	letter-spacing: 0.01em;
+	color: $light-gray-text;
+}
+
+.text-field-wrapper {
+	position: relative;
+}
+
+.text-field {
+	width: 100%;
+	height: 40px;
+
+	padding: 12px;
+	padding-left: 42px;
+
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: $standard-radius;
+
+	color: $dark-gray-text;
+
+	outline-color: rgba($accent, 0.6);
+	outline-offset: 2px;
+
+	@include transition-multiple(color, border-color);
+
+	&.comment-field {
+		min-height: 120px;
+		padding: 12px 16px;
+		resize: none;
+
+		&::placeholder {
+			font-size: 12px;
+			letter-spacing: 0.01em;
+			color: rgba($light-gray-text, 0.5);
+		}
+	}
+
+	&:hover,
+	&:focus {
+		border-color: $accent;
+
+		& + .text-field-icon {
+			fill: $accent;
+		}
+	}
+}
+
+.text-field-icon {
+	@extend .icon;
+
+	position: absolute;
+	top: 11px;
+	left: 12px;
+}
+
+// Accept Terms block
+
+.accept-terms-wrapper {
+	@extend %flex-centered;
+
+	margin-bottom: 30px;
+
+	gap: 8px;
+
+	@media screen and (max-width: 320px) {
+		gap: 5px;
+	}
+
+	@media screen and (max-width: ($mobile - 1px)) {
+		gap: 15px;
+	}
+}
+
+.accept-terms-label {
+	color: $light-gray-text;
+	user-select: none;
+
+	@media screen and (max-width: ($mobile - 1px)) {
+		max-width: 180px;
+		text-align: left;
+	}
+
+	font-size: 12px;
+	line-height: calc(14 / 12);
+
+	@media screen and (min-width: $desktop) {
+		font-size: 14px;
+		line-height: calc(24 / 14);
+	}
+}
+
+.accept-terms-link {
+	color: $accent;
+	text-decoration: underline;
+	text-decoration-skip-ink: none;
+	outline-color: #2195f36c;
+}
+
+.accept-terms-checkbox {
+	appearance: none;
+	// display: inline-block;
+
+	width: 16px;
+	height: 16px;
+
+	border: 2px solid $dark-gray-text;
+	border-radius: 2px;
+
+	@include transition-multiple(border-color, background-color);
+
+	flex-shrink: 0;
+
+	&:focus,
+	&:hover {
+		outline: 2px solid rgba($accent, 0.6);
+		outline-offset: 1px;
+	}
+
+	&:checked {
+		border-color: transparent;
+		background-origin: border-box;
+		background-color: $accent;
+		background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m9.796 7.172-3.3 3.146-.188-.18a278.251 278.251 0 0 0-2.411-2.291c-.017-.007-.864.782-.878.817-.006.017 2.977 2.88 3.357 3.223l.126.114 3.748-3.576 3.748-3.576-.326-.313c-.368-.355-.538-.509-.56-.509-.008 0-1.5 1.415-3.316 3.145' fill='%23fff' fill-rule='evenodd'/%3E%3C/svg%3E");
+		// background-position: center;
+		// background-size: contain;
+	}
+
+	@media screen and (max-width: ($mobile - 1px)) {
+		margin-left: 10px;
+	}
+}
+
+// Modal form submit button
+
+.modal-form-button {
+	@extend .accented-button;
+	padding: 10px 52px;
+
+	@media screen and (max-width: 320px) {
+		padding: 2vw 13vw;
+	}
+}
+
+// Modal window close button
+
+.close-button {
+	@extend %flex-centered;
+	// @extend .button;
+
+	position: fixed;
+	top: 8px;
+	right: 8px;
+
+	width: 30px;
+	height: 30px;
+
+	border: 1px solid rgba(#000000, 0.1);
+	border-radius: 50%;
+
+	color: #000;
+	background-color: $contrast;
+
+	@include transition(color);
+
+	&:hover,
+	&:focus {
+		color: $accent;
+	}
+}
+
+.close-button-icon {
+	@extend .icon;
+	display: block;
+}

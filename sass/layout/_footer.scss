@@ -1,0 +1,163 @@
+/* Footer */
+
+.footer {
+	color: $contrast;
+	background-color: $dark-bg;
+	padding: 60px 0;
+
+	@media screen and (max-width: ($desktop - 1px)) {
+		text-align: center;
+	}
+
+	// @media screen and (min-width: $tablet) {
+	//
+	// }
+
+	@media screen and (min-width: $desktop) {
+		text-align: left;
+	}
+
+	.container {
+		@extend .container;
+		display: flex;
+
+		@media screen and (max-width: ($tablet - 1px)) {
+			flex-direction: column;
+			align-items: center;
+			gap: $regular-gap * 2;
+		}
+
+		@media screen and (min-width: $tablet) {
+			flex-direction: row;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			row-gap: $regular-gap * 2;
+		}
+
+		@media screen and (min-width: $desktop) {
+			// flex-direction: row;
+			gap: $footer-items-spacing;
+			align-items: baseline;
+		}
+	}
+}
+
+.footer-logo {
+	@extend %logo;
+	margin-bottom: $regular-spacing;
+
+	& span {
+		color: $contrast;
+	}
+}
+
+// Footer address block
+
+.address-list {
+	@extend .markup-list;
+}
+
+.address-list-item {
+	min-width: 231px;
+	line-height: calc(24 / 14);
+	letter-spacing: 0.03em;
+	font-weight: 400;
+
+	&:not(:last-child) {
+		margin-bottom: 9px;
+	}
+}
+
+.address-link {
+	@extend .link;
+
+	font-weight: 400;
+	color: rgba($contrast, 0.6);
+}
+
+// Footer headings
+
+.footer-heading {
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: $regular-spacing;
+}
+
+// Join Us block
+
+.join-us-block-wrapper {
+	@extend %mb-mobile;
+}
+
+// Footer subscribe form
+
+.subscribe-block-wrapper {
+	@media screen and (max-width: ($tablet - 1px)) {
+		width: 100%;
+	}
+
+	@media screen and (min-width: $tablet) {
+		width: 450px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		flex-grow: 1;
+	}
+}
+
+.subscribe-form-elements {
+	display: flex;
+	gap: $regular-spacing;
+
+	@media screen and (max-width: ($desktop - 1px)) {
+		flex-direction: column;
+	}
+}
+
+.subscribe-form-input {
+	font-size: 16px;
+	line-height: calc(20 / 16);
+
+	border: 1px solid rgba(#ffffff, 0.3);
+	outline-offset: 2px;
+
+	@include transition(border-color);
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: $accent;
+	}
+
+	filter: drop-shadow(0px 4px 4px rgba(#000000, 0.15));
+	border-radius: $standard-radius;
+	background-color: inherit;
+	color: currentColor;
+
+	padding: 15px 16px;
+
+	flex-grow: 1;
+
+	&::placeholder {
+		font-size: 16px;
+		line-height: calc(20 / 16);
+		letter-spacing: 0.03em;
+		color: rgba(#ffffff, 0.6);
+	}
+}
+
+.subscribe-form-button {
+	@extend .accented-button, .flex, .spaced-list, .align-center;
+
+	padding: 10px 28px;
+	text-align: center;
+
+	@media screen and (max-width: ($desktop - 1px)) {
+		align-self: center;
+	}
+}
+
+.subscribe-button-icon {
+	@extend .icon;
+}

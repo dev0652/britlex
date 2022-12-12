@@ -1,0 +1,131 @@
+/* Utility classes */
+
+// Remove markers in semantic ul's and ol's
+
+.markup-list {
+	list-style: none;
+}
+
+// Flex-boxes
+
+.flex {
+	display: flex;
+
+	&.column {
+		flex-direction: column;
+	}
+
+	// Flex - justify content
+
+	&.space-between {
+		justify-content: space-between;
+	}
+
+	&.space-around {
+		justify-content: space-around;
+	}
+
+	&.justify-center {
+		justify-content: center;
+	}
+
+	&.justify-end {
+		justify-content: end;
+	}
+
+	// Flex - align items
+
+	&.align-center {
+		align-items: center;
+	}
+
+	&.align-end {
+		align-items: end;
+	}
+
+	&.align-baseline {
+		align-items: baseline;
+	}
+
+	// Flex - wrap
+
+	&.wrap {
+		flex-wrap: wrap;
+	}
+
+	&.regular-gap {
+		gap: $regular-gap;
+	}
+
+	&.regular-spacing {
+		gap: $single-spacing;
+	}
+
+	&.large-spacing {
+		gap: $large-spacing;
+	}
+}
+
+// Flex - centered
+
+.flex-centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// Other
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.visually-hidden {
+	position: absolute;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	border: none;
+	// clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.underlined {
+	text-decoration: underline;
+}
+
+// For testing
+
+.outline {
+	outline: auto;
+}
+
+.frame {
+	outline: 1px solid steelblue;
+}
+
+// Colors
+
+.black {
+	color: black;
+}
+
+.white {
+	color: white;
+}
+
+// Letter case
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}

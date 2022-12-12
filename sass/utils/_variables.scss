@@ -1,0 +1,81 @@
+// Breakpoints
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1200px;
+
+// Fonts
+$primary-font: "Open Sans", sans-serif;
+// $primary-font-size: 14px;
+$primary-font-size: 14px;
+$secondary-font: "Raleway", sans-serif;
+
+// Colors
+$accent: #ff6c00;
+$contrast: #fff;
+
+// Text
+$dark: #555555;
+$darker: #303030;
+$light: #9da4bd;
+
+// Background
+$bg-default: #fff;
+$bg-dark: #191c26;
+$bg-light: #f7f7f7;
+
+// Borders
+$standard-radius: 4px;
+
+// Spacings
+$regular-gap: 30px;
+
+$single-spacing: 20px;
+$double-spacing: $single-spacing * 2;
+
+$large-spacing: 44px;
+$list-spacing: 10px;
+$list-icon-spacing: 16px;
+
+// $container-padding: 15px;
+$desktop-version-margin: 215px;
+
+:root {
+	--container-padding: 31px;
+
+	@media screen and (min-width: $tablet) {
+		--container-padding: 39px;
+	}
+	@media screen and (min-width: $desktop) {
+		--container-padding: 15px;
+	}
+}
+$container-padding: var(--container-padding);
+
+:root {
+	--section-padding: 84px;
+
+	@media screen and (min-width: $tablet) {
+		--section-padding: 100px;
+	}
+	@media screen and (min-width: $desktop) {
+		--section-padding: 120px;
+	}
+}
+$section-padding: var(--section-padding);
+
+// $section-padding-mobile: 84px;
+// $section-padding-tablet: $single-spacing * 5;
+// $section-padding-desktop: $single-spacing * 6;
+
+// Positioning
+$z-header: 1;
+$z-backdrop: 10;
+$z-modal: 100;
+
+// SVG
+$icon-inactive: #000;
+
+// Transitions
+$transition-duration: 300ms;
+$transition-timing-function: ease-in-out;

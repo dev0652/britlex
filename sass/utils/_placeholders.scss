@@ -1,0 +1,15 @@
+%flex-centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+%markup-list {
+	list-style: none;
+}
+
+%mb-mobile {
+	@media screen and (max-width: ($tablet - 1px)) {
+		margin-bottom: $regular-gap;
+	}
+}
