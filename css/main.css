@@ -462,7 +462,17 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 550px;
+  gap: 55px;
+}
+@media screen and (min-width: 575px) {
+  main {
+    gap: 90px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main {
+    gap: 120px;
+  }
 }
 @media screen and (min-width: 1338px) {
   main {
