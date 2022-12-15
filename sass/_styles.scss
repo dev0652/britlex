@@ -1,7 +1,19 @@
 main {
 	display: flex;
 	flex-direction: column;
-	gap: 550px;
+
+	gap: 55px;
+
+	@include media(phablet) {
+		gap: 90px;
+	}
+
+	@include media(tablet) {
+		gap: 120px;
+	}
+
+	@include media(tablet-wide) {
+	}
 
 	@include media(desktop) {
 		gap: 180px;
