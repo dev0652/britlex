@@ -2,17 +2,10 @@ main {
 	display: flex;
 	flex-direction: column;
 
-	gap: 55px;
-
-	@include media(phablet) {
-		gap: 90px;
-	}
+	gap: 60px;
 
 	@include media(tablet) {
-		gap: 120px;
-	}
-
-	@include media(tablet-wide) {
+		gap: 100px;
 	}
 
 	@include media(desktop) {
@@ -28,7 +21,11 @@ main {
 		align-items: center;
 	}
 
-	margin: 36px 0;
+	margin: 36px 0 11px;
+
+	@include media(tablet) {
+		margin: 40px 0;
+	}
 
 	@include media(desktop) {
 		margin: 55px 0;
@@ -36,17 +33,21 @@ main {
 }
 
 .logo {
-	@include fz-lh(24, 36);
+	@include fz-lh-rem(24, 36);
+
+	@include media(phablet) {
+		@include fz-lh-rem(30, 45);
+	}
 
 	@include media(desktop) {
-		@include fz-lh(36, 54);
+		@include fz-lh-rem(36, 54);
 	}
 }
 
 .header-menu-wrapper {
 	display: none;
 
-	@include media(tablet) {
+	@include media(tablet-wide) {
 		display: flex;
 		align-items: center;
 	}
@@ -59,19 +60,38 @@ main {
 
 .header-nav-link {
 	@extend .link;
-	line-height: calc(30 / 20);
 	display: inline-block;
-	padding: 20px 0;
+
+	$size: 1rem;
+	font-size: $size;
+	padding: $size 0;
+	line-height: 1.5;
+
+	@include media(tablet-wide) {
+		$size: 1rem;
+		font-size: $size;
+		padding: $size 0;
+	}
+
+	@include media(desktop) {
+		$size: 1.25rem;
+		font-size: $size;
+		padding: $size 0;
+	}
 }
 
 .header-button {
 	@extend .button, .unfilled;
 
 	@include media(desktop) {
-		padding: 20px 56px;
-		min-width: 312px;
-		@include fz-lh(20, 30);
-		margin-left: 120px;
+		// padding: 20px 56px;
+		padding: rem(20) rem(56);
+		// min-width: 312px;
+		min-width: rem(312);
+		// margin-left: 120px;
+		margin-left: rem(120);
+
+		@include fz-lh-rem(20, 30);
 	}
 }
 
@@ -90,20 +110,24 @@ main {
 
 .hero-title {
 	@extend .section-title;
-	@include fz-lh(24, 36);
+	@include fz-lh-rem(24, 36);
+
+	@include media(tablet-wide) {
+		@include fz-lh-rem(48, 64);
+	}
 
 	@include media(desktop) {
-		@include fz-lh(64, 80);
-		margin-bottom: 40px;
+		@include fz-lh-rem(64, 80);
+		margin-bottom: rem(40);
 	}
 }
 
 .hero-description {
 	@extend .description;
-	@include fz-lh(14, 21);
+	@include fz-lh-rem(14, 21);
 
 	@include media(desktop) {
-		@include fz-lh(24, 36);
+		@include fz-lh-rem(24, 36);
 		margin-bottom: 60px;
 		// max-width: 540px;
 	}
@@ -111,10 +135,10 @@ main {
 
 .hero-button {
 	@extend .button;
-	@include fz-lh(16, 24);
+	@include fz-lh-rem(16, 24);
 
 	@include media(desktop) {
-		@include fz-lh(36, 54);
+		@include fz-lh-rem(36, 54);
 		min-width: 426px;
 		padding: 23px 64px;
 	}
@@ -133,7 +157,7 @@ section.skills {
 	}
 
 	.subsection-title {
-		line-height: calc(45 / 30);
+		line-height: 1.5;
 	}
 }
 
@@ -143,8 +167,7 @@ section.skills {
 	padding: 32px 18px;
 
 	.description {
-		font-size: 16px;
-		line-height: calc(24 / 16);
+		@include fz-lh-rem(16, 24);
 	}
 }
 
@@ -156,8 +179,8 @@ section.skills {
 	margin-top: 0;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-	grid-column-gap: 30px;
-	grid-row-gap: 30px;
+	grid-column-gap: $regular-gap;
+	grid-row-gap: $regular-gap;
 }
 
 .speaking {
@@ -200,7 +223,7 @@ section.about {
 	}
 
 	.description {
-		@include fz-lh(20, 36);
+		@include fz-lh-rem(20, 36);
 	}
 }
 
@@ -212,22 +235,21 @@ section.about {
 	text-align: center;
 
 	.description {
-		line-height: calc(30 / 20);
+		line-height: 1.5;
 	}
 }
 
 .stat-count {
 	color: $stat-count-color;
 	font-weight: 600;
-	@include fz-lh(48, 72);
+	@include fz-lh-rem(48, 72);
 
 	margin-bottom: 0;
 }
 
 .stat-name {
 	color: $accent-light;
-	font-size: 20px;
-	line-height: 30px;
+	@include fz-lh-rem(20, 30);
 	text-align: center;
 }
 
@@ -238,8 +260,7 @@ section.pricing {
 		// gap: 0;
 		flex-direction: column;
 		// align-items: center;
-
-		@include fz-lh(20, 30);
+		@include fz-lh-rem(20, 30);
 	}
 
 	.section-title {
@@ -253,12 +274,12 @@ section.pricing {
 
 .price-cards {
 	display: flex;
-	gap: 30px;
+	gap: $regular-gap;
 }
 
 // .price-labels {
 // 	display: flex;
-// 	gap: 30px;
+// 	gap: $regular-gap;
 // }
 
 .price-card {
@@ -267,12 +288,12 @@ section.pricing {
 
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
+	gap: $regular-gap;
 }
 
 .price-card-meta {
 	.description {
-		@include fz-lh(20, 30);
+		@include fz-lh-rem(20, 30);
 		margin-bottom: 0;
 	}
 }
@@ -313,13 +334,13 @@ section.contacts {
 
 	.description {
 		max-width: 650px;
-		@include fz-lh(20, 30);
+		@include fz-lh-rem(20, 30);
 	}
 }
 
 .subscribe-form {
 	display: flex;
-	gap: 30px;
+	gap: $regular-gap;
 }
 
 .subscribe-form-input {
@@ -334,7 +355,7 @@ section.contacts {
 	&::placeholder {
 		color: $accent-light;
 		font-family: inherit;
-		@include fz-lh(16, 30);
+		@include fz-lh-rem(16, 30);
 		// margin-left: 30px;
 	}
 }
@@ -369,7 +390,7 @@ section.contacts {
 	display: flex;
 	gap: $footer-items-spacing;
 
-	@include fz-lh(24, 36);
+	@include fz-lh-rem(24, 36);
 	// font-weight: 400;
 	letter-spacing: 0.02em;
 	color: $accent-light;

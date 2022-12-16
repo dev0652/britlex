@@ -52,7 +52,8 @@ address {
   font-style: normal;
 }
 
-img {
+img,
+picture {
   display: block;
   max-width: 100%;
   height: auto;
@@ -101,89 +102,6 @@ ul {
 }
 
 /* Utility classes */
-.markup-list {
-  list-style: none;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.flex.column {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.flex.space-between {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.flex.space-around {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-.flex.justify-center {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.flex.justify-end {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-}
-.flex.align-center {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.flex.align-end {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
-}
-.flex.align-baseline {
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-}
-.flex.wrap {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.flex.regular-gap {
-  gap: 30px;
-}
-.flex.regular-spacing {
-  gap: 20px;
-}
-.flex.large-spacing {
-  gap: 40px;
-}
-
-.flex-centered {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
 .visually-hidden {
   position: absolute;
   z-index: -1;
@@ -201,18 +119,6 @@ ul {
 
 .outline {
   outline: auto;
-}
-
-.frame {
-  outline: 1px solid steelblue;
-}
-
-.black {
-  color: black;
-}
-
-.white {
-  color: white;
 }
 
 .uppercase {
@@ -321,7 +227,7 @@ ul {
 body {
   color: #263238;
   background-color: #fff;
-  font-size: 2opx;
+  font-size: 1.25rem;
   line-height: 1.5;
 }
 
@@ -462,16 +368,11 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 55px;
-}
-@media screen and (min-width: 575px) {
-  main {
-    gap: 90px;
-  }
+  gap: 60px;
 }
 @media screen and (min-width: 768px) {
   main {
-    gap: 120px;
+    gap: 100px;
   }
 }
 @media screen and (min-width: 1338px) {
@@ -482,7 +383,7 @@ main {
 
 /* -------------- Header -------------- */
 .header {
-  margin: 36px 0;
+  margin: 36px 0 11px;
 }
 .header .container {
   -webkit-box-pack: justify;
@@ -492,6 +393,11 @@ main {
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    margin: 40px 0;
+  }
+}
 @media screen and (min-width: 1338px) {
   .header {
     margin: 55px 0;
@@ -499,12 +405,18 @@ main {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.5;
+}
+@media screen and (min-width: 575px) {
+  .logo {
+    font-size: 1.875rem;
+    line-height: 1.5;
+  }
 }
 @media screen and (min-width: 1338px) {
   .logo {
-    font-size: 36px;
+    font-size: 2.25rem;
     line-height: 1.5;
   }
 }
@@ -512,7 +424,7 @@ main {
 .header-menu-wrapper {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .header-menu-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -527,22 +439,35 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 50px;
+  gap: 3.125rem;
 }
 
 .header-nav-link {
-  line-height: 1.5;
   display: inline-block;
-  padding: 20px 0;
+  font-size: 1rem;
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+@media screen and (min-width: 992px) {
+  .header-nav-link {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+}
+@media screen and (min-width: 1338px) {
+  .header-nav-link {
+    font-size: 1.25rem;
+    padding: 1.25rem 0;
+  }
 }
 
 @media screen and (min-width: 1338px) {
   .header-button {
-    padding: 20px 56px;
-    min-width: 312px;
-    font-size: 20px;
+    padding: 1.25rem 3.5rem;
+    min-width: 19.5rem;
+    margin-left: 7.5rem;
+    font-size: 1.25rem;
     line-height: 1.5;
-    margin-left: 120px;
   }
 }
 
@@ -563,36 +488,42 @@ main {
 }
 
 .hero-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.5;
+}
+@media screen and (min-width: 992px) {
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1.3333333333;
+  }
 }
 @media screen and (min-width: 1338px) {
   .hero-title {
-    font-size: 64px;
+    font-size: 4rem;
     line-height: 1.25;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
   }
 }
 
 .hero-description {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 @media screen and (min-width: 1338px) {
   .hero-description {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin-bottom: 60px;
   }
 }
 
 .hero-button {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 @media screen and (min-width: 1338px) {
   .hero-button {
-    font-size: 36px;
+    font-size: 2.25rem;
     line-height: 1.5;
     min-width: 426px;
     padding: 23px 64px;
@@ -620,7 +551,7 @@ section.skills .subsection-title {
   padding: 32px 18px;
 }
 .skill .description, .skill .hero-description {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -630,8 +561,8 @@ section.skills .subsection-title {
   margin-top: 0;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-column-gap: 1.875rem;
+  grid-row-gap: 1.875rem;
 }
 
 .speaking {
@@ -684,7 +615,7 @@ section.skills .subsection-title {
   }
 }
 section.about .description, section.about .hero-description {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.8;
 }
 
@@ -705,15 +636,15 @@ section.about .description, section.about .hero-description {
 .stat-count {
   color: #2a3246;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 3rem;
   line-height: 1.5;
   margin-bottom: 0;
 }
 
 .stat-name {
   color: #8f95a5;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1.25rem;
+  line-height: 1.5;
   text-align: center;
 }
 
@@ -723,7 +654,7 @@ section.pricing .container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.5;
 }
 section.pricing .section-title, section.pricing .hero-title {
@@ -738,12 +669,12 @@ section.pricing .subsection-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .price-card {
-  -ms-flex-preferred-size: calc((100% - 60px) / 3);
-      flex-basis: calc((100% - 60px) / 3);
+  -ms-flex-preferred-size: calc((100% - 3.75rem) / 3);
+      flex-basis: calc((100% - 3.75rem) / 3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -751,11 +682,11 @@ section.pricing .subsection-title {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .price-card-meta .description, .price-card-meta .hero-description {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.5;
   margin-bottom: 0;
 }
@@ -799,7 +730,7 @@ section.pricing .subsection-title {
 }
 section.contacts .description, section.contacts .hero-description {
   max-width: 650px;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.5;
 }
 
@@ -807,7 +738,7 @@ section.contacts .description, section.contacts .hero-description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .subscribe-form-input {
@@ -821,31 +752,31 @@ section.contacts .description, section.contacts .hero-description {
 .subscribe-form-input::-webkit-input-placeholder {
   color: #8f95a5;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.875;
 }
 .subscribe-form-input::-moz-placeholder {
   color: #8f95a5;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.875;
 }
 .subscribe-form-input:-ms-input-placeholder {
   color: #8f95a5;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.875;
 }
 .subscribe-form-input::-ms-input-placeholder {
   color: #8f95a5;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.875;
 }
 .subscribe-form-input::placeholder {
   color: #8f95a5;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.875;
 }
 
@@ -880,8 +811,8 @@ section.contacts .description, section.contacts .hero-description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 80px;
-  font-size: 24px;
+  gap: 5rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #8f95a5;

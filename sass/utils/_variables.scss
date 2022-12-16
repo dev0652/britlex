@@ -16,8 +16,7 @@ $breakpoints: (
 
 // Fonts
 $primary-font: "Poppins", sans-serif;
-// $primary-font-size: 14px;
-$primary-font-size: 2opx;
+$primary-font-size: rem(20);
 
 // Colors
 $accent-light: #8f95a5;
@@ -53,19 +52,16 @@ $border-radius: 10px;
 $border-width: 2px;
 
 // Spacings
-$regular-gap: 30px;
+$regular-gap: rem(30);
 
-$single-spacing: 20px;
+$single-spacing: rem(20);
 $double-spacing: $single-spacing * 2;
-$large-spacing: 40px;
 
-$list-spacing: 10px;
-$menu-items-spacing: 50px;
-$footer-items-spacing: 80px;
-$section-title-spacing: 60px;
-
-// $container-padding: 15px;
-$desktop-version-margin: 215px;
+$list-spacing: rem(10);
+$menu-items-spacing: rem(50);
+$footer-items-spacing: rem(80);
+$section-title-spacing: rem(60);
+$desktop-version-margin: rem(215);
 
 :root {
 	--container-padding: 31px;
@@ -91,11 +87,7 @@ $container-padding: var(--container-padding);
 }
 $section-padding: var(--section-padding);
 
-// $section-padding-mobile: 84px;
-// $section-padding-tablet: $single-spacing * 5;
-// $section-padding-desktop: $single-spacing * 6;
-
-// Positioning
+// z-index
 $z-header: 1;
 $z-backdrop: 10;
 $z-modal: 100;

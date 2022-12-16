@@ -1,15 +1,15 @@
-// // Defaults
+// Defaults
 @import "./defaults/my-normalize";
 @import "./defaults/my-defaults";
 
-// // Utilities and variables
+// Utilities and variables
+@import "./utils/functions";
 @import "./utils/variables";
-@import "./utils/utilities";
 @import "./utils/mixins";
 @import "./utils/placeholders";
-@import "./utils/functions";
+@import "./utils/utilities";
 @import "./utils/animations";
 
+// Styles
 @import "./layout/common";
-
 @import "styles";

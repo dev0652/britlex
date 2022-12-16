@@ -9,7 +9,7 @@
 }
 
 @mixin fz-lh-rem($fz, $lh: false) {
-	font-size: rem-calc($fz);
+	font-size: rem($fz);
 
 	@if ($lh) {
 		line-height: calc($lh / $fz);
