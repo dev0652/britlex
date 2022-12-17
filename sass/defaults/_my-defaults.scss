@@ -10,6 +10,10 @@ a {
 	color: inherit;
 }
 
+ul {
+	list-style: none;
+}
+
 button,
 [type="button"],
 [type="reset"],
@@ -24,12 +28,9 @@ address {
 }
 
 img,
+svg,
 picture {
 	display: block;
 	max-width: 100%;
 	height: auto;
-}
-
-ul {
-	list-style: none;
 }
